@@ -4,17 +4,13 @@
  */
 var duplicateZeros = function(arr) {
     
-  let temp = [];
-  for (let elem of arr) {
-    if (elem === 0) {
-      temp.push(0);
-      temp.push(0);
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] == 0) {
+            
+            arr.splice(i, 0, 0)
+            arr.pop()
+            i++
+        }
         
-    } else {
-      temp.push(elem);
     }
-  }
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] = temp[i];
-  }
 }
